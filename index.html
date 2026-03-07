@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Portfólio</title>
+</head>
+
+<body>
+    <div class="particulas"></div>
+
+    <nav class="navegacao">
+        <ul class="menu">
+            <li>
+                <a href="#inicio" class="menu-link">Início</a>
+            </li>
+            <li>
+                <a href="#sobre" class="menu-link">Sobre</a>
+            </li>
+            <li>
+                <a href="#projetos" class="menu-link">Projetos de Estudo</a>
+            </li>
+            <li>
+                <a href="#projetos autorais" class="menu-link">Projetos Autorais</a>
+            </li>
+            <li>
+                <a href="#contatos" class="menu-link">Contato</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main id="inicio" class="cabecalho">
+        <img src="./img/foto de perfil.png" alt="Foto de Wilson Junior" class="foto-perfil">
+        <h1>Wilson Junior</h1>
+        <p class="cabecalho-sub-titulo">Desenvolvedor de Software em Formação</p>
+    </main>
+
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo">Sobre Mim</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo">
+                Olá! Sou estudante de Ciência da Computação com foco em desenvolvimento de software.
+                 Estou em constante evolução, aprimorando minhas habilidades técnicas por meio da construção de projetos práticos.
+                Tenho interesse em resolver problemas utilizando lógica de programação e desenvolver soluções eficientes, aplicando conceitos de HTML, CSS e JavaScript.
+            </p>
+        </div>
+    </section>
+
+    <section id="projetos" class="projetos">
+        <h2 class="projetos-titulo">Projetos de Estudo e Prática</h2>
+
+        <div class="projetos-aviso">
+            <p class="projetos-estudo-paragrafo">
+                Para aprendizado, aprimoramento e estudos.
+            </p>
+        </div>
+
+    
+        <div class="projetos-caixa">
+
+            <div class="projetos-card">
+                <img src="./img/calcweb.png" alt="Projeto 1" class="projetos-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">CalcWeb</h3>
+                    <p class="paragrafo-projetos">Calculadora Virtual Desenvolvida com HTML, CSS e JavaScript.</p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="./img/PasswordGenerator.png" alt="Projeto 1" class="projetos-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">Gerador de Senhas com JavaScript</h3>
+                    <p class="paragrafo-projetos">Gerador de Senhas WEB desenvolvida com JavaScript, HTML e CSS.</p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="./img/BarraNavegacaoResponsiva.png" alt="Projeto 1" class="projetos-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">Barra de Navegação Responsiva</h3>
+                    <p class="paragrafo-projetos">Para facilitar a navegação de sites, foi desenvolvida com HTML, CSS e JavaScript.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section id="projetos autorais" class="projetos autorais">
+        <h2 class="projetos-titulo">Projetos Autorais</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo">
+                Em desenvolvimento.
+            </p>
+        </div>
+    </section>
+
+
+    <section id="contatos" class="contatos">
+        <h2 class="contatos-titulo">Entre em Contato</h2>
+
+        <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
+            <div class="grupo-form">
+                <input placeholder="Nome" class="campo-form" id="nome">
+            </div>
+
+            <div class="grupo-form">
+                <textarea class="campo-form" placeholder="Digite sua Mensagem" rows="6" id="mensagem"></textarea>
+            </div>
+
+            <button type="submit" class="botao-form">Enviar WhatsApp</button>
+        </form>
+
+    </section>
+
+    <script>
+        function enviarWhats(event) {
+            event.preventDefault()
+
+            const nome = document.getElementById('nome').value;
+            const mensagem = document.getElementById('mensagem').value;
+            const telefone = '5511958914751'
+
+            const texto = `Olá! Me chamo ${nome}, ${mensagem}`
+            const msgFormatada = encodeURIComponent(texto)
+
+            const url = `https://wa.me/${telefone}?text=${msgFormatada}`
+
+            console.log(url)
+
+
+            window.open(url, '_blank')
+        }
+
+    </script>
+
+</body>
+
+</html>
